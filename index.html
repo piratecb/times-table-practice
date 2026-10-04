@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+  <title>Tabuada Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">×</div>
+      <div>
+        <p class="eyebrow">Practice mode</p>
+        <h1>Tabuada</h1>
+      </div>
+      <button class="icon-button" id="resetButton" type="button" aria-label="Reset score" title="Reset score">↻</button>
+    </header>
+
+    <section class="stats" aria-label="Game statistics">
+      <div class="stat"><span class="stat-label">Score</span><strong id="score">0</strong></div>
+      <div class="stat"><span class="stat-label">Streak</span><strong id="streak">0</strong></div>
+      <div class="stat"><span class="stat-label">Accuracy</span><strong id="accuracy">100%</strong></div>
+    </section>
+
+    <section class="practice-card" aria-labelledby="questionLabel">
+      <div class="question-area">
+        <span class="question-label" id="questionLabel">Solve this</span>
+        <div class="equation" aria-live="polite">
+          <span id="factorA">7</span><span class="operator">×</span><span id="factorB">8</span><span class="operator">=</span><span class="answer-placeholder" id="answerPlaceholder">?</span>
+        </div>
+      </div>
+      <form id="answerForm" class="answer-form">
+        <label class="sr-only" for="answerInput">Your answer</label>
+        <input id="answerInput" type="number" inputmode="numeric" autocomplete="off" placeholder="Answer" autofocus required />
+        <button class="primary-button" type="submit">Check <span aria-hidden="true">↵</span></button>
+      </form>
+      <p class="feedback" id="feedback" role="status" aria-live="polite">Type your answer and press Enter.</p>
+    </section>
+
+    <section class="range-section" aria-labelledby="rangeTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Customize</p>
+          <h2 id="rangeTitle">Tables to practice</h2>
+        </div>
+        <span class="range-value" id="rangeValue">2–12</span>
+      </div>
+      <input id="rangeInput" class="range-input" type="range" min="2" max="12" value="12" aria-label="Maximum multiplication table" />
+      <div class="range-labels"><span>2</span><span>12</span></div>
+    </section>
+
+    <p class="tip"><kbd>Enter</kbd> to submit <span>·</span> Keep your streak going.</p>
+  </main>
+</body>
+</html>
